@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+    <style>
+        span {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="sample">Hello<span>World</span></h1>
+    <h1 id="result"></h1>
+    <h1 id="result2"></h1>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //第一
+        // console.log('text', $('#sample').text());
+        const sampleText = $('#sample').text();
+        $('#result').text(sampleText)
+
+        // console.log('html' ,$('#sample').html());
+        //第二
+        // const sampleHtml = $('#sample').html();
+        // $('#result2').html(sampleHtml)
+        //第三
+        // console.log('text:', $('#sample').text());
+
+        // const sampleText = $('#sample').text();
+        // $('#result').text(sampleText)
+
+        // console.log('html:', $('#sample').html());
+
+        // const sampleHtml = $('#sample').html();
+        // $('#result').html(sampleHtml)
+
+
+        // const sampleHtml = $('#sample').html();
+        // $('#result').text(sampleHtml)
+
+        $('li').each((index, item) => {
+            // console.log('index', index);
+            // console.log('item', item);
+            console.log('item text:', $(item).text());
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .fontS {
+            font-size: .8rem;
+        }
+
+        .fontM {
+            font-size: 1rem;
+        }
+
+        .fontL {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group" role="group" aria-label="Basice example">
+                <button trpe="button" class="btn-secondary">S</button>
+                <button trpe="button" class="btn-secondary active">M</button>
+                <button trpe="button" class="btn-secondary">L</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>JQUERY</h2>
+            <P class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid reiciendis, aperiam eius in
+                nobis beatae fugiat cupiditate dolor provident maiores delectus harum! Esse, unde cum blanditiis quos
+                repellat ea incidunt.</P>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore incidunt harum doloremque obcaecati.
+                Cumque voluptas illo, minima provident dolore aliquam nesciunt dicta perspiciatis quod veritatis quis
+                laboriosam eligendi facilis corrupti?</P>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        //全部移除才能add 處理class name
+        //按鈕的sibling
+        //同樣id or class容易處理 用even去抓
+        // $('.btn-group button').eq(0).click(function () {
+        //     console.log('btnS');
+        //     $('p').removeClass().addClass('fontS');
+        //     $(this).addClass('active').siblings().removeclass('active')
+        // })
+        // $('.btn-group button').eq(1).click(function () {
+        //     $('p').addClass('fontM').addClass('fontM');
+        //     $(this).addClass('active').siblings().removeclass('active')
+        // })
+        // $('.btn-group button').eq(2).click(function () {
+        //     $('p').addClass('fontL').addClass('fontL');
+        //     $(this).addClass('active').siblings().removeclass('active')
+        // })
+
+
+        //動詞跟資料分開處理 不會同時做畫面跟做動畫是兩回事 三個寫成一個在分開寫
+
+
+        $('.btn-group button').click(function () {
+            console.log('hi S', $(this).is(':contains(S)'));
+            console.log('hi M', $(this).is(':contains(M)'));
+            console.log('hi L', $(this).is(':contains(L)'));
+            let rmClassStr = '';
+            let addClassStr = '';
+
+            if ($(this).is(':contains(S)')) {
+                addClassStr = 'fontS'
+                rmClassStr = 'fontM fontL'
+            }
+
+            if ($(this).is(':contains(M)')) {
+                addClassStr = 'fontM'
+                rmClassStr = 'fontS fontL'
+            }
+
+            if ($(this).is(':contains(L)')) {
+                addClassStr = 'fontL'
+                rmClassStr = 'fontM fontS'
+            }
+
+            reRender(this, rmClassStr, addClassStr)
+
+        })
+
+        function reRender(btn, rmClassStr, addClassStr) {
+            $('p').removeClass(rmClassStr).addClass(addClassStr);
+            $(btn).addClass('active').siblings().removeClass('active')
+        }
+
+        
+    </script>
+</body>
+
+</html>

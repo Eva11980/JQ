@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+</head>
+
+<input>
+    <input type="button" value="click">
+    </input>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 1</li>
+                <!-- append -->
+            </ul>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $("ul").append("<li>item 4</li>");
+        $("ul").append("<li>item 43</li>");
+        $("ul").prepend("<li>item -1</li>");
+    </script>
+
+    <script>
+
+        //放在全域變數 一開始執行 只做一次 可以往裡面找
+        let x = 3;
+        $('button').click(function () {
+            console.log('button clicked');
+            //不能設變數let x = 3;
+
+            console.log('x1',x);
+            //conso var  常數變數typeacript 型態 字串x數字 
+            $('ul').append("<li>item" +x+ "</li>");
+            x = x+1
+            console.log('x2:',x);
+        })
+        console.log('end');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .train {
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            width: 500%;
+            transform: translateX(0px);
+            transition: .5s;
+            /* nav-index: auto; */
+        }
+
+        .train li img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slider-dots li {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            margin: 0 40px;
+        }
+
+        .slider-dots li:nth-child(1) {
+            background-color: #ffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="train">
+            <li><img src="./img/柴犬.jpg" alt=""></li>
+            <li><img src="./img/黃金.jpg" alt=""></li>
+            <li><img src="./img/p1.jpg" alt=""></li>
+            <li><img src="./img/c4.jpg" alt=""></li>
+            <li><img src="./img/Ｃ6.jpg" alt=""></li>
+        </ul>
+        <!-- 空格換頁碼 -->
+        <ul class="slider-dots">
+            <li>
+                <img src="" alt="">
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //程式碼有錯
+        // $('.slider-dots li').click(function () {
+        //     console.log('li clicked', $(this).index());
+
+        //     const index = $(this).index();
+        //     const moveX = index * -800;
+
+        //     $('.train').css('transform', `translateX($(moveX)}px)`);
+        //     $('this').css('background', '#ffff').siblings().css("background", "transparent");
+
+
+        $('.slider-dots li').click(function () {
+            console.log('li clicked', $(this).index());
+
+            const index = $(this).index();
+            const moveX = index * -800;
+
+            $('.train').css('transform', `translateX(${moveX}px)`);
+
+            $(this).css('background', '#fff').siblings().css("background", "transparent");
+
+
+            // 分開綁定
+            // $('.slider-dots li').click(function () {
+            // console.log('li clicked', $(this).index());
+
+            // // 如果(index=0)
+            // if (index === 0) {
+            //     // 移動到第一頁
+            //     $('.train').css('transform', 'translateX(0px)')
+            // }
+            // else if (index === 1) {
+            //     // 移動到第二頁(index=1)
+            //     $('.train').css('transform', 'translateX(-800px)')
+            // }
+            // // 移動到第三頁
+            // $('.train').css('transform', 'translateX(-1600px)')
+            // // 移動到第四頁
+            // $('.train').css('transform', 'translateX(-2400px)')
+            // // 移動到第五頁
+            // $('.train').css('transform', 'translateX(-3200px)')
+        })
+    </script>
+</body>
+
+</html>

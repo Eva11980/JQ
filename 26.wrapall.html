@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wrapAll</title>
+    <style>
+        .img-wrap {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .img-wrap>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <!-- 全部打包在一個盒子裡  講義55-->
+        <div class="row">
+            <img src="./img/2da4c76b589281c960a36d0ca6e09afa.jpg" alt="">
+            <img src="./img/37b5dd77bcd0b810ab80e0148ec52c9f.jpg" alt="">
+            <img src="./img/5f15a283d7ec040b985a2662923bcfca.jpg" alt="">
+        </div>
+        <div class="row">
+            <img src="./img/74f8274892bda7ffd7e671fa147fc37b.png" alt="">
+            <img src="./img/9bd1b108d7a64c6ff4c3d6c807709351.png" alt="">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $("img").wrapAll("<div class='img-wrap'></div>");
+    </script>
+</body>
+</html>

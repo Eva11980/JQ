@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        tel
+                    </td>
+                    <td>
+                        email
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        $('input[type="checkbox"]').click(function () {
+            console.log('checkbox', $(this));
+            // $(this).closest('tr').css('background', 'lightblue')
+
+            // $('input:checked').closest('tr').css('background', 'lightblue');
+
+            // $('input:not(:checked)').closest('tr').css('background', 'none');
+
+
+
+            // const bgCol
+            // if (){
+            //     $(this).closest('tr').css('tr').css('background','lightblue')
+            // }
+            // else{
+            //     $(this).closest('tr').css('tr').css('background','none')
+            // }
+
+            let bgColor = 'none';
+            if ($(this).prop('checked')) {
+                bgColor = 'lightblue';
+            }
+
+            $(this).closest('tr').css('background', bgColor)
+
+        })
+    </script>
+</body>
+
+</html>

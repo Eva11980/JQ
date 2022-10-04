@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="product-demo d-flex justify-content-center">
+                    <img class="h-50" src="./img/37b5dd77bcd0b810ab80e0148ec52c9f.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="d-flex">
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/5f16fd25e74d3.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/8ce19f9a5762c0628b605c82c0624667.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/37b5dd77bcd0b810ab80e0148ec52c9f.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/74f8274892bda7ffd7e671fa147fc37b.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/235e1a0b3ea7f201250a507bb71e4c9d.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap"><img class="w-100" src="./img/60f2e4ba36844.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        // [todo:點擊小圖，讓大圖的src = 被點擊的小圖的 src]
+
+
+        // 1.時機點:小圖被使用者點擊
+        $('.img-wrap img').click(function (e) {
+            console.log('e.currentTarget:', e.currentTarget);
+            // 2.得到小圖的 src
+            const imgSrc = $(e.currentTarget).attr('src');
+            // console.log('imgSrc', imgSrc);
+
+            // 3.改大圖的 src
+            $('.product-demo img').attr('src', imgSrc)
+        })
+    </script>
+</body>
+
+</html>

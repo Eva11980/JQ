@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add class</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: darkolivegreen;
+            transition: 0.5s;
+        }
+
+        .box.active {
+            background-color: rgb(237, 188, 82);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnAdd">Add</button>
+    <button id="btnRemove">Remove</button>
+    <button id="btnToggle">Toggle</button>
+    <button id="btnHas">Has</button>
+    <div class="box">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('#btnAdd').click(function () {
+            $('.box').addClass('active')
+        })
+        $('#btnRemove').click(function () {
+            $('.box').removeClass('active')
+        })
+        $('#btnToggle').click(function () {
+            $('.box').toggleClass('active')
+        })
+
+        $('#btnHas').click(function () {
+            //has false  toggle true
+            console.log('btnHas cliked', $('.box').hasClass('active'));
+
+            //判斷式
+
+            // if ($('.box').hasClass('active')) {
+            //     $('.box').removeClass('active')
+            // }
+            // else {
+            //     $('.box').addClass('active')
+            // }
+
+        })
+
+    </script>
+</body>
+
+</html>
